@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "event"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "event_title": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "eventbrite_id": {
+      "type": "string",
+      "required": true
+    },
+    "event_flyer": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}
